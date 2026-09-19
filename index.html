@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>thhai410</title>
+  <meta name="description" content="Personal Portfolio of Doan Thanh Hai (thhai) — HUST Computer Engineering Student (GPA 3.61), AI Engineer & Frontend Developer pursuing Computer Vision R&D." />
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+
+  <!-- Google Fonts: Raleway, Roboto, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Raleway:wght@400;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Starry Canvas & Cursor Glow Background -->
+  <canvas id="star-canvas"></canvas>
+  <div class="cursor-glow"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#home" class="brand-logo">
+        thhai410<span class="brand-dot">.</span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="#home"    class="nav-link" data-i18n="nav_home">Trang chủ</a></li>
+        <li class="nav-item"><a href="#about"   class="nav-link"        data-i18n="nav_about">Giới thiệu</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link"        data-i18n="nav_contact">Liên hệ</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="ctrl-btn" id="themeToggleBtn" title="Toggle Theme">☀️</button>
+        <button class="ctrl-btn" id="langToggleBtn"  title="Toggle Language">🌐 VI</button>
+        <a href="cv.pdf" target="_blank" class="ctrl-btn">📄 CV</a>
+        <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="home">
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+
+        <!-- Left: Mascot + Text content -->
+        <div class="hero-content">
+
+          <!-- Koboyo Mascot (above greeting, no circle) -->
+          <div class="mascot-inline-wrapper" id="mascotContainer">
+            <span id="mascotSquash" class="mascot-squash">
+              <span id="mascotDir"   class="mascot-layer mascot-directions"></span>
+              <span id="mascotReact" class="mascot-layer mascot-reactions"  style="opacity:0;"></span>
+            </span>
+          </div>
+
+          <div class="greeting-text" data-i18n="greeting">
+            Xin chào!
+          </div>
+
+          <h1 class="hero-name" data-i18n="hero_title">
+            MÌNH LÀ <span class="highlight">ĐOÀN THANH HẢI</span>
+          </h1>
+
+          <div class="typewriter-box">
+            <span id="typewriter-text"></span>
+            <span class="typewriter-cursor"></span>
+          </div>
+
+          <p class="hero-intro" data-i18n="hero_intro">
+            Mình là sinh viên năm cuối ngành <b>Kỹ thuật Máy tính</b> tại <b>HUST</b>,
+            có 1 năm kinh nghiệm thực tế làm <span class="accent">AI Engineer</span>.
+            Hiện tại mình đang tìm hiểu về <span class="accent">Computer Vision R&D</span>
+            và phát triển kỹ năng <span class="accent">Frontend / UI/UX</span>.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="cv.pdf" target="_blank" class="btn btn-primary" data-i18n="btn_cv">📄 Tải CV</a>
+            <a href="#contact"              class="btn btn-outline"  data-i18n="btn_contact">✉ Liên hệ</a>
+          </div>
+        </div>
+
+        <!-- Right: Photo in circle -->
+        <div class="hero-avatar-wrapper">
+          <div class="avatar-card hero-photo-card">
+            <img src="public/luv.JPEG" alt="Doan Thanh Hai" class="hero-photo" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section (brief) -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title" data-i18n="about_title">
+          ĐỂ MÌNH <span class="accent">TỰ GIỚI THIỆU</span>
+        </h2>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p data-i18n="about_p1">
+              Mình là sinh viên năm cuối ngành <b>Kỹ thuật Máy tính tại HUST</b> với
+              kết quả học tập <b>CPA 3.61 / 4.0</b>.
+            </p>
+            <p data-i18n="about_p2">
+              Mình có 1 năm kinh nghiệm làm <span class="accent">AI Engineer tại A-Star Group</span>
+              và hiện đang là <span class="accent">Intern Frontend Developer &amp; UI/UX tại VNet JSC</span>.
+              Đam mê của mình là tìm hiểu về <span class="accent">Computer Vision R&amp;D</span>.
+            </p>
+            <p data-i18n="about_p3">
+              Mình dành thời gian đọc <b>Research Papers</b>, thử nghiệm các mô hình CV
+              và code với <b>Python, C/C++</b> kết hợp <b>Figma &amp; Frontend Web</b>.
+            </p>
+
+            <!-- Social links -->
+            <div class="about-socials">
+              <a href="https://github.com/thhai410"                             target="_blank" rel="noopener" class="social-chip" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/thanh-h%E1%BA%A3i-91054a42a/" target="_blank" rel="noopener" class="social-chip" title="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a href="mailto:imhai0827@gmail.com" class="social-chip" title="Email">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                Email
+              </a>
+            </div>
+          </div>
+
+          <!-- Skills chip cloud -->
+          <div class="about-skills">
+            <h3 class="skills-label" data-i18n="skills_label">Kỹ năng &amp; Công cụ</h3>
+            <div class="skill-chips">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">C / C++</span>
+              <span class="skill-chip">Computer Vision</span>
+              <span class="skill-chip">PyTorch</span>
+              <span class="skill-chip">OpenCV</span>
+              <span class="skill-chip">Figma UI/UX</span>
+              <span class="skill-chip">HTML / CSS</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">Git / GitHub</span>
+              <span class="skill-chip">Paper Reading</span>
+              <span class="skill-chip">LLM Tools</span>
+              <span class="skill-chip">Linux / Bash</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-center">
+        <h2 class="section-title" data-i18n="contact_title">
+          TÌM MÌNH TRÊN <span class="accent">MẠNG XÃ HỘI</span>
+        </h2>
+        <p class="section-subtitle" data-i18n="contact_sub">
+          Đừng ngần ngại <span class="accent">kết nối</span> với mình nhé!
+        </p>
+
+        <ul class="social-icons-list">
+          <li>
+            <a href="https://github.com/thhai410"                             target="_blank" rel="noopener" class="social-icon-circle" title="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/thanh-h%E1%BA%A3i-91054a42a/" target="_blank" rel="noopener" class="social-icon-circle" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:imhai0827@gmail.com" class="social-icon-circle" title="Email">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <div>Designed &amp; Developed by <b>Doan Thanh Hai (thhai)</b></div>
+      <div>Copyright © 2026 TH</div>
+      <div><a href="#home" style="color:var(--color-primary);font-weight:700;">Top ↑</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
